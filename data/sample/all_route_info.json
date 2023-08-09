@@ -1,0 +1,119 @@
+{
+  "GetRouteSummaryForStopResult": {
+    "StopNo": "3047",
+    "Error": "",
+    "StopDescription": "MARKETPLACE",
+    "Routes": {
+      "Route": [
+        {
+          "RouteNo": "75",
+          "RouteHeading": "Tunney's Pasture & Gatineau & N Rideau",
+          "Direction": "",
+          "DirectionID": 0
+        },
+        {
+          "RouteNo": "75",
+          "RouteHeading": "Barrhaven Centre",
+          "Direction": "",
+          "DirectionID": 1
+        },
+        {
+          "RouteNo": "80",
+          "RouteHeading": "Barrhaven Centre",
+          "Direction": "",
+          "DirectionID": 0
+        },
+        {
+          "RouteNo": "80",
+          "RouteHeading": "Tunney's Pasture",
+          "Direction": "",
+          "DirectionID": 1
+        },
+        {
+          "RouteNo": "99",
+          "RouteHeading": "Barrhaven Centre",
+          "Direction": "",
+          "DirectionID": 0
+        },
+        {
+          "RouteNo": "99",
+          "RouteHeading": "Greenboro & Hurdman",
+          "Direction": "",
+          "DirectionID": 1
+        },
+        {
+          "RouteNo": "170",
+          "RouteHeading": "Fallowfield & CFIA",
+          "Direction": "",
+          "DirectionID": 0
+        },
+        {
+          "RouteNo": "170",
+          "RouteHeading": "Barrhaven Centre",
+          "Direction": "",
+          "DirectionID": 1
+        },
+        {
+          "RouteNo": "171",
+          "RouteHeading": "Fallowfield",
+          "Direction": "",
+          "DirectionID": 0
+        },
+        {
+          "RouteNo": "171",
+          "RouteHeading": "Barrhaven Centre",
+          "Direction": "",
+          "DirectionID": 1
+        },
+        {
+          "RouteNo": "173",
+          "RouteHeading": "Barrhaven Centre",
+          "Direction": "",
+          "DirectionID": 0
+        },
+        {
+          "RouteNo": "173",
+          "RouteHeading": "Fallowfield & Bayshore",
+          "Direction": "",
+          "DirectionID": 1
+        },
+        {
+          "RouteNo": "175",
+          "RouteHeading": "Golflinks",
+          "Direction": "",
+          "DirectionID": 0
+        },
+        {
+          "RouteNo": "175",
+          "RouteHeading": "Barrhaven Centre",
+          "Direction": "",
+          "DirectionID": 1
+        },
+        {
+          "RouteNo": "176",
+          "RouteHeading": "Manotick",
+          "Direction": "",
+          "DirectionID": 0
+        },
+        {
+          "RouteNo": "176",
+          "RouteHeading": "Barrhaven Centre",
+          "Direction": "",
+          "DirectionID": 1
+        },
+        {
+          "RouteNo": "305",
+          "RouteHeading": "Carlingwood",
+          "Direction": "",
+          "DirectionID": 0
+        },
+        {
+          "RouteNo": "305",
+          "RouteHeading": "North Gower \/ Manotick",
+          "Direction": "",
+          "DirectionID": 1
+        }
+      ]
+    }
+  }
+}

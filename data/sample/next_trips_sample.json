@@ -1,0 +1,99 @@
+{
+  "GetNextTripsForStopResult": {
+    "StopNo": "3047",
+    "StopLabel": "MARKETPLACE",
+    "Error": "",
+    "Route": {
+      "RouteDirection": [
+        {
+          "RouteNo": "75",
+          "RouteLabel": "Tunney's Pasture & Gatineau & N Rideau",
+          "Direction": "",
+          "Error": "",
+          "RequestProcessingTime": "20230809121142",
+          "Trips": {
+            "Trip": [
+              {
+                "Longitude": "-75.72973771528764",
+                "Latitude": "45.242247494784266",
+                "GPSSpeed": "18",
+                "TripDestination": "Tunney's Pasture",
+                "TripStartTime": "12:21",
+                "AdjustedScheduleTime": "23",
+                "AdjustmentAge": "0.57",
+                "LastTripOfSchedule": false,
+                "BusType": ""
+              },
+              {
+                "Longitude": "",
+                "Latitude": "",
+                "GPSSpeed": "",
+                "TripDestination": "Tunney's Pasture",
+                "TripStartTime": "12:36",
+                "AdjustedScheduleTime": "38",
+                "AdjustmentAge": "-1",
+                "LastTripOfSchedule": false,
+                "BusType": ""
+              },
+              {
+                "Longitude": "",
+                "Latitude": "",
+                "GPSSpeed": "",
+                "TripDestination": "Tunney's Pasture",
+                "TripStartTime": "12:51",
+                "AdjustedScheduleTime": "53",
+                "AdjustmentAge": "-1",
+                "LastTripOfSchedule": false,
+                "BusType": ""
+              }
+            ]
+          }
+        },
+        {
+          "RouteNo": "75",
+          "RouteLabel": "Barrhaven Centre",
+          "Direction": "",
+          "Error": "",
+          "RequestProcessingTime": "20230809121142",
+          "Trips": {
+            "Trip": [
+              {
+                "Longitude": "",
+                "Latitude": "",
+                "GPSSpeed": "",
+                "TripDestination": "Cambrian",
+                "TripStartTime": "11:42",
+                "AdjustedScheduleTime": "2",
+                "AdjustmentAge": "-1",
+                "LastTripOfSchedule": false,
+                "BusType": ""
+              },
+              {
+                "Longitude": "-75.77172729492187",
+                "Latitude": "45.358895263671876",
+                "GPSSpeed": "4",
+                "TripDestination": "Cambrian",
+                "TripStartTime": "11:56",
+                "AdjustedScheduleTime": "17",
+                "AdjustmentAge": "0.52",
+                "LastTripOfSchedule": false,
+                "BusType": ""
+              },
+              {
+                "Longitude": "",
+                "Latitude": "",
+                "GPSSpeed": "",
+                "TripDestination": "Cambrian",
+                "TripStartTime": "12:11",
+                "AdjustedScheduleTime": "31",
+                "AdjustmentAge": "-1",
+                "LastTripOfSchedule": false,
+                "BusType": ""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

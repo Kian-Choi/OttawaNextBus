@@ -1,0 +1,491 @@
+{
+  "GetRouteSummaryForStopResult": {
+    "StopNo": "3047",
+    "Error": "",
+    "StopDescription": "MARKETPLACE",
+    "Routes": {
+      "Route": [
+        {
+          "RouteNo": "75",
+          "RouteHeading": "Tunney's Pasture & Gatineau & N Rideau",
+          "DirectionID": 0,
+          "Direction": "",
+          "Trips": [
+            {
+              "Longitude": "-75.73182180653448",
+              "Latitude": "45.241415106731914",
+              "GPSSpeed": "23",
+              "TripDestination": "Tunney's Pasture",
+              "TripStartTime": "12:21",
+              "AdjustedScheduleTime": "23",
+              "AdjustmentAge": "0.40",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            },
+            {
+              "Longitude": "",
+              "Latitude": "",
+              "GPSSpeed": "",
+              "TripDestination": "Tunney's Pasture",
+              "TripStartTime": "12:36",
+              "AdjustedScheduleTime": "37",
+              "AdjustmentAge": "-1",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            },
+            {
+              "Longitude": "",
+              "Latitude": "",
+              "GPSSpeed": "",
+              "TripDestination": "Tunney's Pasture",
+              "TripStartTime": "12:51",
+              "AdjustedScheduleTime": "52",
+              "AdjustmentAge": "-1",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            }
+          ]
+        },
+        {
+          "RouteNo": "75",
+          "RouteHeading": "Barrhaven Centre",
+          "DirectionID": 1,
+          "Direction": "",
+          "Trips": [
+            {
+              "Longitude": "",
+              "Latitude": "",
+              "GPSSpeed": "",
+              "TripDestination": "Cambrian",
+              "TripStartTime": "11:42",
+              "AdjustedScheduleTime": "1",
+              "AdjustmentAge": "-1",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            },
+            {
+              "Longitude": "-75.77130150072503",
+              "Latitude": "45.358177705244586",
+              "GPSSpeed": "22",
+              "TripDestination": "Cambrian",
+              "TripStartTime": "11:56",
+              "AdjustedScheduleTime": "17",
+              "AdjustmentAge": "0.47",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            },
+            {
+              "Longitude": "",
+              "Latitude": "",
+              "GPSSpeed": "",
+              "TripDestination": "Cambrian",
+              "TripStartTime": "12:11",
+              "AdjustedScheduleTime": "30",
+              "AdjustmentAge": "-1",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            }
+          ]
+        },
+        {
+          "RouteNo": "80",
+          "RouteHeading": "Barrhaven Centre",
+          "DirectionID": 0,
+          "Direction": "",
+          "Trips": [
+            {
+              "Longitude": "-75.70750357887961",
+              "Latitude": "45.294374292547054",
+              "GPSSpeed": "3",
+              "TripDestination": "Barrhaven Centre",
+              "TripStartTime": "11:27",
+              "AdjustedScheduleTime": "16",
+              "AdjustmentAge": "0.45",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            },
+            {
+              "Longitude": "",
+              "Latitude": "",
+              "GPSSpeed": "",
+              "TripDestination": "Barrhaven Centre",
+              "TripStartTime": "11:57",
+              "AdjustedScheduleTime": "36",
+              "AdjustmentAge": "-1",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            },
+            {
+              "Longitude": "",
+              "Latitude": "",
+              "GPSSpeed": "",
+              "TripDestination": "Barrhaven Centre",
+              "TripStartTime": "12:28",
+              "AdjustedScheduleTime": "67",
+              "AdjustmentAge": "-1",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            }
+          ]
+        },
+        {
+          "RouteNo": "80",
+          "RouteHeading": "Tunney's Pasture",
+          "DirectionID": 1,
+          "Direction": "",
+          "Trips": [
+            {
+              "Longitude": "-75.70750357887961",
+              "Latitude": "45.294374292547054",
+              "GPSSpeed": "3",
+              "TripDestination": "Tunney's Pasture",
+              "TripStartTime": "12:33",
+              "AdjustedScheduleTime": "22",
+              "AdjustmentAge": "0.45",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            },
+            {
+              "Longitude": "",
+              "Latitude": "",
+              "GPSSpeed": "",
+              "TripDestination": "Tunney's Pasture",
+              "TripStartTime": "13:03",
+              "AdjustedScheduleTime": "51",
+              "AdjustmentAge": "-1",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            },
+            {
+              "Longitude": "",
+              "Latitude": "",
+              "GPSSpeed": "",
+              "TripDestination": "Tunney's Pasture",
+              "TripStartTime": "13:34",
+              "AdjustedScheduleTime": "82",
+              "AdjustmentAge": "-1",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            }
+          ]
+        },
+        {
+          "RouteNo": "99",
+          "RouteHeading": "Barrhaven Centre",
+          "DirectionID": 0,
+          "Direction": "",
+          "Trips": [
+            {
+              "Longitude": "",
+              "Latitude": "",
+              "GPSSpeed": "",
+              "TripDestination": "Barrhaven Centre",
+              "TripStartTime": "11:54",
+              "AdjustedScheduleTime": "15",
+              "AdjustmentAge": "-1",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            },
+            {
+              "Longitude": "",
+              "Latitude": "",
+              "GPSSpeed": "",
+              "TripDestination": "Barrhaven Centre",
+              "TripStartTime": "12:23",
+              "AdjustedScheduleTime": "44",
+              "AdjustmentAge": "-1",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            },
+            {
+              "Longitude": "",
+              "Latitude": "",
+              "GPSSpeed": "",
+              "TripDestination": "Barrhaven Centre",
+              "TripStartTime": "12:53",
+              "AdjustedScheduleTime": "75",
+              "AdjustmentAge": "-1",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            }
+          ]
+        },
+        {
+          "RouteNo": "99",
+          "RouteHeading": "Greenboro & Hurdman",
+          "DirectionID": 1,
+          "Direction": "",
+          "Trips": [
+            {
+              "Longitude": "",
+              "Latitude": "",
+              "GPSSpeed": "",
+              "TripDestination": "Greenboro",
+              "TripStartTime": "12:35",
+              "AdjustedScheduleTime": "23",
+              "AdjustmentAge": "-1",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            },
+            {
+              "Longitude": "",
+              "Latitude": "",
+              "GPSSpeed": "",
+              "TripDestination": "Greenboro",
+              "TripStartTime": "13:04",
+              "AdjustedScheduleTime": "52",
+              "AdjustmentAge": "-1",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            },
+            {
+              "Longitude": "",
+              "Latitude": "",
+              "GPSSpeed": "",
+              "TripDestination": "Greenboro",
+              "TripStartTime": "13:36",
+              "AdjustedScheduleTime": "84",
+              "AdjustmentAge": "-1",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            }
+          ]
+        },
+        {
+          "RouteNo": "170",
+          "RouteHeading": "Fallowfield & CFIA",
+          "DirectionID": 0,
+          "Direction": "",
+          "Trips": [
+            {
+              "Longitude": "-75.74161333333333",
+              "Latitude": "45.26718666666667",
+              "GPSSpeed": "0",
+              "TripDestination": "Fallowfield",
+              "TripStartTime": "12:24",
+              "AdjustedScheduleTime": "13",
+              "AdjustmentAge": "0.45",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            },
+            {
+              "Longitude": "",
+              "Latitude": "",
+              "GPSSpeed": "",
+              "TripDestination": "Fallowfield",
+              "TripStartTime": "12:54",
+              "AdjustedScheduleTime": "42",
+              "AdjustmentAge": "-1",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            }
+          ]
+        },
+        {
+          "RouteNo": "170",
+          "RouteHeading": "Barrhaven Centre",
+          "DirectionID": 1,
+          "Direction": "",
+          "Trips": [
+            {
+              "Longitude": "-75.7566909790039",
+              "Latitude": "45.28738021850586",
+              "GPSSpeed": "27",
+              "TripDestination": "Barrhaven Centre",
+              "TripStartTime": "12:02",
+              "AdjustedScheduleTime": "26",
+              "AdjustmentAge": "0.45",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            },
+            {
+              "Longitude": "",
+              "Latitude": "",
+              "GPSSpeed": "",
+              "TripDestination": "Barrhaven Centre",
+              "TripStartTime": "12:32",
+              "AdjustedScheduleTime": "53",
+              "AdjustmentAge": "-1",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            },
+            {
+              "Longitude": "",
+              "Latitude": "",
+              "GPSSpeed": "",
+              "TripDestination": "Barrhaven Centre",
+              "TripStartTime": "13:02",
+              "AdjustedScheduleTime": "83",
+              "AdjustmentAge": "-1",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            }
+          ]
+        },
+        {
+          "RouteNo": "171",
+          "RouteHeading": "Fallowfield",
+          "DirectionID": 0,
+          "Direction": "",
+          "Trips": [
+            {
+              "Longitude": "",
+              "Latitude": "",
+              "GPSSpeed": "",
+              "TripDestination": "Fallowfield",
+              "TripStartTime": "12:59",
+              "AdjustedScheduleTime": "47",
+              "AdjustmentAge": "-1",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            },
+            {
+              "Longitude": "",
+              "Latitude": "",
+              "GPSSpeed": "",
+              "TripDestination": "Fallowfield",
+              "TripStartTime": "13:29",
+              "AdjustedScheduleTime": "77",
+              "AdjustmentAge": "-1",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            }
+          ]
+        },
+        {
+          "RouteNo": "171",
+          "RouteHeading": "Barrhaven Centre",
+          "DirectionID": 1,
+          "Direction": "",
+          "Trips": {
+            "Longitude": "",
+            "Latitude": "",
+            "GPSSpeed": "",
+            "TripDestination": "Barrhaven Centre",
+            "TripStartTime": "12:25",
+            "AdjustedScheduleTime": "32",
+            "AdjustmentAge": "-1",
+            "LastTripOfSchedule": false,
+            "BusType": ""
+          }
+        },
+        {
+          "RouteNo": "173",
+          "RouteHeading": "Barrhaven Centre",
+          "DirectionID": 0,
+          "Direction": "",
+          "Trips": [
+            {
+              "Longitude": "-75.75819480582459",
+              "Latitude": "45.28028514287243",
+              "GPSSpeed": "15",
+              "TripDestination": "Barrhaven Centre",
+              "TripStartTime": "12:00",
+              "AdjustedScheduleTime": "11",
+              "AdjustmentAge": "0.48",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            },
+            {
+              "Longitude": "",
+              "Latitude": "",
+              "GPSSpeed": "",
+              "TripDestination": "Barrhaven Centre",
+              "TripStartTime": "12:03",
+              "AdjustedScheduleTime": "34",
+              "AdjustmentAge": "-1",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            },
+            {
+              "Longitude": "",
+              "Latitude": "",
+              "GPSSpeed": "",
+              "TripDestination": "Barrhaven Centre",
+              "TripStartTime": "13:00",
+              "AdjustedScheduleTime": "64",
+              "AdjustmentAge": "-1",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            }
+          ]
+        },
+        {
+          "RouteNo": "173",
+          "RouteHeading": "Fallowfield & Bayshore",
+          "DirectionID": 1,
+          "Direction": "",
+          "Trips": [
+            {
+              "Longitude": "-75.75819480582459",
+              "Latitude": "45.28028514287243",
+              "GPSSpeed": "15",
+              "TripDestination": "Fallowfield",
+              "TripStartTime": "12:30",
+              "AdjustedScheduleTime": "19",
+              "AdjustmentAge": "0.48",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            },
+            {
+              "Longitude": "",
+              "Latitude": "",
+              "GPSSpeed": "",
+              "TripDestination": "Bayshore",
+              "TripStartTime": "13:00",
+              "AdjustedScheduleTime": "48",
+              "AdjustmentAge": "-1",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            },
+            {
+              "Longitude": "",
+              "Latitude": "",
+              "GPSSpeed": "",
+              "TripDestination": "Fallowfield",
+              "TripStartTime": "13:30",
+              "AdjustedScheduleTime": "78",
+              "AdjustmentAge": "-1",
+              "LastTripOfSchedule": false,
+              "BusType": ""
+            }
+          ]
+        },
+        {
+          "RouteNo": "175",
+          "RouteHeading": "Golflinks",
+          "DirectionID": 0,
+          "Direction": "",
+          "Trips": {
+            "Longitude": "",
+            "Latitude": "",
+            "GPSSpeed": "",
+            "TripDestination": "Golflinks",
+            "TripStartTime": "13:05",
+            "AdjustedScheduleTime": "53",
+            "AdjustmentAge": "-1",
+            "LastTripOfSchedule": false,
+            "BusType": ""
+          }
+        },
+        {
+          "RouteNo": "175",
+          "RouteHeading": "Barrhaven Centre",
+          "DirectionID": 1,
+          "Direction": "",
+          "Trips": {
+            "Longitude": "",
+            "Latitude": "",
+            "GPSSpeed": "",
+            "TripDestination": "Barrhaven Centre",
+            "TripStartTime": "13:13",
+            "AdjustedScheduleTime": "68",
+            "AdjustmentAge": "-1",
+            "LastTripOfSchedule": false,
+            "BusType": ""
+          }
+        }
+      ]
+    }
+  }
+}
