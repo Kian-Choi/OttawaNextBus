@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch, Mock
 import json
-from model import fetch_oc_route_summary_for_stop_feed, Route, fetch_next_trips_all_routes, Trip
+from model import fetch_oc_route_summary_for_stop_feed, Route, fetch_next_trips_all_routes, Trip, fetch_next_trips, Favorites
 
 
 class TestModelFunctions(unittest.TestCase):
@@ -100,6 +100,58 @@ class TestModelFunctions(unittest.TestCase):
 
         # Asserting the expected results against the actual results
         self.assertEqual(result, expected_trips)
+
+    @patch('model.requests.get')
+    def test_fetch_next_trips(self, mock_get):
+
+        # Load the sample JSON data for the expected result
+        with open('data/sample/next_trips_sample.json', 'r') as file:
+            sample_data = json.load(file)
+
+        # Mock the API call
+        mock_response = Mock()
+        mock_response.text = json.dumps(sample_data)
+        mock_get.return_value = mock_response
+
+        # Call the function
+        stop_no = '3047'
+        route_no = '75'
+        result = fetch_next_trips(stop_no, route_no)
+
+        # Expected result based on the provided JSON data
+        expected_trips = [
+            Trip("75", "Tunney's Pasture", "23", "-75.72973771528764", "45.242247494784266"),
+            Trip("75", "Tunney's Pasture", "38", "", ""),
+            Trip("75", "Tunney's Pasture", "53", "", ""),
+            Trip("75", "Cambrian", "2", "", ""),
+            Trip("75", "Cambrian", "17", "-75.77172729492187", "45.358895263671876"),
+            Trip("75", "Cambrian", "31", "", "")
+        ]
+
+        # Validate the results
+        self.assertEqual(result, expected_trips)
+
+
+    @patch("builtins.open", new_callable=unittest.mock.mock_open, read_data=json.dumps([]))
+    @patch('json.dump')
+    def test_save_to_favorites(self, mock_json_dump, mock_open):
+        favorites = Favorites()
+        favorites.save_to_favorites("3047", "75")
+        mock_json_dump.assert_called_once_with([{"stop": "3047", "route": "75"}], mock_open())
+
+    @patch("builtins.open", new_callable=unittest.mock.mock_open, read_data=json.dumps([{"stop": "3047", "route": "75"}]))
+    @patch('json.dump')
+    def test_remove_from_favorites(self, mock_json_dump, mock_open):
+        favorites = Favorites()
+        favorites.remove_from_favorites("3047", "75")
+        mock_json_dump.assert_called_once_with([], mock_open())
+
+    @patch("builtins.open", new_callable=unittest.mock.mock_open, read_data=json.dumps([{"stop": "3047", "route": "75"}]))
+    def test_get_favorites(self, mock_open):
+        favorites = Favorites()
+        result = favorites.get_favorites()
+        self.assertEqual(result, [{"stop": "3047", "route": "75"}])
+
 
 
 if __name__ == '__main__':
