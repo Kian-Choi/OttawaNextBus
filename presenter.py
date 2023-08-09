@@ -13,6 +13,7 @@ class Presenter:
         self.bus_stops = self.load_bus_stops()  # Load bus stops from CSV file
         self.favorites = Favorites()
 
+    # Load bus stops from the CSV file
     def load_bus_stops(self):
         bus_stops = []
         with open('./data/stops.csv', 'r', encoding='utf-8-sig') as file:
@@ -26,6 +27,7 @@ class Presenter:
                 })
         return bus_stops
 
+    # Check if a coordinate is valid
     @staticmethod
     def is_valid_coordinate(coordinate):
         try:
@@ -34,6 +36,7 @@ class Presenter:
         except ValueError:
             return False
 
+    # Fetch and display route summary for a stop
     def fetch_and_display_route_summary(self):
         stop_no = self.view.get_stop_no()
         if not stop_no:
@@ -43,6 +46,7 @@ class Presenter:
         routes = fetch_oc_route_summary_for_stop_feed(stop_no)
         self.view.display_routes(routes)
 
+    # Fetch and display next trips for a stop and route
     def fetch_and_display_next_trips(self):
         stop_no = self.view.get_stop_no()
         route_no = self.view.get_route_no()
@@ -53,6 +57,7 @@ class Presenter:
         trips = fetch_next_trips(stop_no, route_no)
         self.view.display_trips(trips)
 
+    # Fetch and display next trips for all routes at a stop
     def fetch_and_display_next_trips_all_routes(self):
         stop_no = self.view.get_stop_no()
         if not stop_no:
@@ -62,6 +67,7 @@ class Presenter:
         trips = fetch_next_trips_all_routes(stop_no)
         self.view.display_trips(trips)
 
+    # Show the selected stop and its trips on a map
     def show_on_map(self):
         trips = fetch_next_trips_all_routes(self.view.get_stop_no())
 
@@ -84,6 +90,7 @@ class Presenter:
         if bus_stop is not None:
             bus_map = folium.Map(location=[float(bus_stop["stop_lat"]), float(bus_stop["stop_lon"])], zoom_start=13)
 
+            # Add a marker for the selected bus stop
             folium.Marker(
                 location=[float(bus_stop["stop_lat"]), float(bus_stop["stop_lon"])],
                 popup=f"Stop: {bus_stop['stop_code']} - {bus_stop['stop_name']}",
@@ -106,18 +113,22 @@ class Presenter:
         else:
             messagebox.showinfo('Info', 'Bus stop not found.')
 
+    # Save a favorite stop and route combination
     def save_to_favorites(self, stop_no, route_no):
         self.favorites.save_to_favorites(stop_no, route_no)
         messagebox.showinfo('Info', 'Saved to favorites!')
 
+    # Remove a favorite stop and route combination
     def remove_from_favorites(self, stop_no, route_no):
         self.favorites.remove_from_favorites(stop_no, route_no)
         messagebox.showinfo('Info', 'Removed from favorites!')
 
+    # Display the list of favorite stops and routes
     def display_favorites(self):
         favorites = self.favorites.get_favorites()
         self.view.display_favorites(favorites)
 
+    # Remove a favorite stop and route combination
     def remove_favorite(self, stop, route):
         self.favorites.remove_from_favorites(stop, route)
         self.display_favorites()  # Refresh the display

@@ -4,10 +4,12 @@ import json
 from typing import List
 import requests
 
+# API credentials
 APP_ID = "5eb15251"
 API_KEY = "feb28d776f1df9d7147c447e9ee7f336"
 
 class Route:
+    # Represents a transit route
     def __init__(self, route_no, route_heading):
         self._route_no = route_no
         self._route_heading = route_heading
@@ -22,6 +24,7 @@ class Route:
 
 
 class Trip(Route):
+    # Represents a transit trip with real-time information
     def __init__(self, route_no, route_heading, adjusted_schedule_time, longitude, latitude):
         super().__init__(route_no, route_heading)
         self._adjusted_schedule_time = adjusted_schedule_time
@@ -47,9 +50,11 @@ class Trip(Route):
 
 
 class Favorites:
+    # Manages user's favorite stops and routes
     def __init__(self):
         self._favorites = self._load_favorites()
 
+    # Load favorites from JSON file
     def _load_favorites(self):
         try:
             with open('favorites.json', 'r') as file:
@@ -57,14 +62,17 @@ class Favorites:
         except (FileNotFoundError, json.JSONDecodeError):
             return []
 
+    # Save favorite to list and update JSON file
     def save_to_favorites(self, stop, route):
         self._favorites.append({"stop": stop, "route": route})
         with open('favorites.json', 'w') as file:
             json.dump(self._favorites, file)
 
+    # Get list of favorite stops and routes
     def get_favorites(self):
         return self._favorites
 
+    # Remove favorite from list and update JSON file
     def remove_from_favorites(self, stop, route):
         self._favorites = [fav for fav in self._favorites if not (fav["stop"] == stop and fav["route"] == route)]
         with open('favorites.json', 'w') as file:
@@ -73,6 +81,7 @@ class Favorites:
 def fetch_next_trips(stop_no, route_no) -> List[Trip]:
     trip_result: list[Trip] = []
     try:
+        # Construct API URL for getting next trips
         url = f"https://api.octranspo1.com/v2.0/GetNextTripsForStop?" \
               f"appID={APP_ID}" \
               f"&apiKey={API_KEY}" \
@@ -81,17 +90,20 @@ def fetch_next_trips(stop_no, route_no) -> List[Trip]:
               f"&format=JSON"
         response = requests.get(url)
 
+        # Parse API response
         OC_feed = json.loads(response.text)
         get_next_trips_for_stop_result = OC_feed['GetNextTripsForStopResult']
         route = get_next_trips_for_stop_result['Route']
         route_direction = route['RouteDirection']
 
+        # Extract trip information
         for dir in route_direction:
             trips = dir['Trips']
             trip = trips['Trip']
             for t in trip:
                 trip_result.append(Trip(dir['RouteNo'], t['TripDestination'], t['AdjustedScheduleTime'],
                                         t['Longitude'], t['Latitude']))
+
     except IOError as e:
         print(f"Error: {str(e)}")
     except KeyError:
@@ -101,12 +113,15 @@ def fetch_next_trips(stop_no, route_no) -> List[Trip]:
 def fetch_oc_route_summary_for_stop_feed(stop_no) -> List[Route]:
     routes_result: list[Route] = []
     try:
+        # Construct API URL for getting route summary
         url = f"https://api.octranspo1.com/v2.0/GetRouteSummaryForStop?" \
               f"appID={APP_ID}" \
               f"&apiKey={API_KEY}" \
               f"&stopNo={stop_no}" \
               f"&format=JSON"
         response = requests.get(url)
+
+        # Parse API response
         OCFeed_data = json.loads(response.text)
         print(url)
         print(OCFeed_data)
@@ -115,8 +130,10 @@ def fetch_oc_route_summary_for_stop_feed(stop_no) -> List[Route]:
         routes = get_route_summary_for_stop_result.get("Routes")
         route = routes.get("Route")
 
+        # Extract route information
         for r in route:
             routes_result.append(Route(r.get("RouteNo"), r.get("RouteHeading")))
+
     except requests.exceptions.RequestException as e:
         print(e)
     except TypeError:
@@ -126,12 +143,15 @@ def fetch_oc_route_summary_for_stop_feed(stop_no) -> List[Route]:
 def fetch_next_trips_all_routes(stop_no):
     trip_result: list[Trip] = []
     try:
+        # Construct API URL for getting next trips for all routes
         url = f"https://api.octranspo1.com/v2.0/GetNextTripsForStopAllRoutes" \
               f"?appID={APP_ID}" \
               f"&apiKey={API_KEY}" \
               f"&stopNo={stop_no}" \
               f"&format=JSON"
         response = requests.get(url)
+
+        # Parse API response
         OCFeed_data = json.loads(response.text)
         print(url)
         print(OCFeed_data)
@@ -143,6 +163,7 @@ def fetch_next_trips_all_routes(stop_no):
         if not isinstance(route, list):
             route = [route]
 
+        # Extract route and trip information
         for r in route:
             trips = r.get("Trips")
 
@@ -152,6 +173,7 @@ def fetch_next_trips_all_routes(stop_no):
             for t in trips:
                 trip_result.append(Trip(r.get("RouteNo"), t.get("TripDestination"), t.get("AdjustedScheduleTime"),
                                         t.get("Longitude"), t.get("Latitude")))
+
     except requests.exceptions.RequestException as e:
         print(e)
     except TypeError:
