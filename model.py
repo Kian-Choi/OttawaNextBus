@@ -123,8 +123,6 @@ def fetch_oc_route_summary_for_stop_feed(stop_no) -> List[Route]:
 
         # Parse API response
         OCFeed_data = json.loads(response.text)
-        print(url)
-        print(OCFeed_data)
 
         get_route_summary_for_stop_result = OCFeed_data.get("GetRouteSummaryForStopResult")
         routes = get_route_summary_for_stop_result.get("Routes")
@@ -153,8 +151,6 @@ def fetch_next_trips_all_routes(stop_no):
 
         # Parse API response
         OCFeed_data = json.loads(response.text)
-        print(url)
-        print(OCFeed_data)
 
         get_route_summary_for_stop_result = OCFeed_data.get("GetRouteSummaryForStopResult")
         routes = get_route_summary_for_stop_result.get("Routes")

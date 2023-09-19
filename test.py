@@ -3,7 +3,6 @@ from unittest.mock import patch, Mock
 import json
 from model import fetch_oc_route_summary_for_stop_feed, Route, fetch_next_trips_all_routes, Trip, fetch_next_trips, Favorites
 
-
 class TestModelFunctions(unittest.TestCase):
 
     @patch('model.requests.get')
@@ -60,7 +59,7 @@ class TestModelFunctions(unittest.TestCase):
         stop_no = '3047'
         result = fetch_next_trips_all_routes(stop_no)
 
-        # Sample expected result (you should fill this with what you expect the function to return)
+        # Sample expected result
         expected_trips = [
             Trip("75", "Tunney's Pasture", "23", "-75.73182180653448", "45.241415106731914"),
             Trip("75", "Tunney's Pasture", "37", "", ""),
@@ -131,7 +130,6 @@ class TestModelFunctions(unittest.TestCase):
         # Validate the results
         self.assertEqual(result, expected_trips)
 
-
     @patch("builtins.open", new_callable=unittest.mock.mock_open, read_data=json.dumps([]))
     @patch('json.dump')
     def test_save_to_favorites(self, mock_json_dump, mock_open):
@@ -151,8 +149,6 @@ class TestModelFunctions(unittest.TestCase):
         favorites = Favorites()
         result = favorites.get_favorites()
         self.assertEqual(result, [{"stop": "3047", "route": "75"}])
-
-
 
 if __name__ == '__main__':
     unittest.main()

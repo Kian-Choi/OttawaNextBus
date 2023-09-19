@@ -13,7 +13,7 @@ class View:
         self.search_window_open = False
         self.stop_search_window = None
 
-        self.window.title('OCTranspo App')
+        self.window.title('Ottawa Next Bus')
         self.entry_stop = tk.Entry(window)
         self.entry_route = tk.Entry(window)
         self.search_button = tk.Button(window, text='Search Stop', command=self.open_stop_search)
