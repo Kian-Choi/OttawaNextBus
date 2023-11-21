@@ -3,6 +3,7 @@ from unittest.mock import patch, Mock
 import json
 from model import fetch_oc_route_summary_for_stop_feed, Route, fetch_next_trips_all_routes, Trip, fetch_next_trips, Favorites
 
+
 class TestModelFunctions(unittest.TestCase):
 
     @patch('model.requests.get')
@@ -102,7 +103,6 @@ class TestModelFunctions(unittest.TestCase):
 
     @patch('model.requests.get')
     def test_fetch_next_trips(self, mock_get):
-
         # Load the sample JSON data for the expected result
         with open('data/sample/next_trips_sample.json', 'r') as file:
             sample_data = json.load(file)
@@ -149,6 +149,20 @@ class TestModelFunctions(unittest.TestCase):
         favorites = Favorites()
         result = favorites.get_favorites()
         self.assertEqual(result, [{"stop": "3047", "route": "75"}])
+
+    def test_route_creation(self):
+        route = Route("101", "West Bound")
+        self.assertEqual(route._route_no, "101")
+        self.assertEqual(route._route_heading, "West Bound")
+
+    def test_trip_creation(self):
+        trip = Trip("101", "West Bound", "15:30", 45.4215, -75.6993)
+        self.assertEqual(trip._route_no, "101")
+        self.assertEqual(trip._route_heading, "West Bound")
+        self.assertEqual(trip._adjusted_schedule_time, "15:30")
+        self.assertEqual(trip._longitude, 45.4215)
+        self.assertEqual(trip._latitude, -75.6993)
+
 
 if __name__ == '__main__':
     unittest.main()
