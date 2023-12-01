@@ -28,8 +28,9 @@ class Route:
 
 class Trip(Route):
     # Represents a transit trip with real-time information
-    def __init__(self, route_no, route_heading, adjusted_schedule_time, longitude, latitude):
+    def __init__(self, route_no, route_heading, trip_start_time, adjusted_schedule_time, longitude, latitude):
         super().__init__(route_no, route_heading)
+        self._trip_start_time = trip_start_time
         self._adjusted_schedule_time = adjusted_schedule_time
         self._longitude = longitude
         self._latitude = latitude
@@ -38,6 +39,7 @@ class Trip(Route):
         if isinstance(other, Trip):
             return (self._route_no == other._route_no and
                     self._route_heading == other._route_heading and
+                    self._trip_start_time == other._trip_start_time and
                     self._adjusted_schedule_time == other._adjusted_schedule_time and
                     self._longitude == other._longitude and
                     self._latitude == other._latitude)
@@ -48,7 +50,7 @@ class Trip(Route):
         return "Real Time" if self._longitude else ""
 
     def __str__(self):
-        return f"Route: {self._route_no}, Heading: {self._route_heading}, Time: {self._adjusted_schedule_time}," \
+        return f"Route: {self._route_no}, Heading: {self._route_heading}, Start Time: {self._trip_start_time}, Time: {self._adjusted_schedule_time}," \
                f" Longitude: {self._longitude}, latitude: {self._latitude}"
 
 
@@ -108,7 +110,7 @@ def extract_trips_from_next_trips(response_data) -> List[Trip]:
             trips = [trips]
 
         for t in trips:
-            trip_result.append(Trip(dir.get('RouteNo'), t.get('TripDestination'), t.get('AdjustedScheduleTime'),
+            trip_result.append(Trip(dir.get('RouteNo'), t.get('TripDestination'), t.get('TripStartTime'), t.get('AdjustedScheduleTime'),
                                     t.get('Longitude'), t.get('Latitude')))
 
     return trip_result
@@ -142,7 +144,7 @@ def extract_trips_from_route(route_data) -> List[Trip]:
             trips = [trips]
 
         for t in trips:
-            trip_result.append(Trip(r.get("RouteNo", ""), t.get("TripDestination", ""),
+            trip_result.append(Trip(r.get("RouteNo", ""), t.get("TripDestination", ""),t.get('TripStartTime'),
                                     t.get("AdjustedScheduleTime", ""), t.get("Longitude", ""), t.get("Latitude", "")))
 
     return trip_result
@@ -159,7 +161,7 @@ def fetch_oc_route_summary_for_stop_feed(stop_no) -> List[Route]:
     routes = response_data.get("GetRouteSummaryForStopResult", {}).get("Routes", {}).get("Route", [])
     return [Route(r.get("RouteNo"), r.get("RouteHeading")) for r in routes]
 
-def fetch_next_trips_all_routes(stop_no):
+def fetch_next_trips_all_routes(stop_no) -> List[Trip]:
     params = {"stopNo": stop_no}
     response_data = fetch_data_from_api("GetNextTripsForStopAllRoutes", params)
     routes = response_data.get("GetRouteSummaryForStopResult", {}).get("Routes", {}).get("Route", [])
